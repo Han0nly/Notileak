@@ -1,0 +1,38 @@
+- id: FDP_DEC_EXT.1.1
+  type: manifest
+  choice_type: all
+  description: Access to Platform Resources
+  selection: 'The application has access to {}.'
+  choice:
+    - - 'android\.permission\.(?:INTERNET|ACCESS_NETWORK_STATE)'
+      - network connectivity
+    - - android\.permission\.CAMERA
+      - camera
+    - - android\.permission\.RECORD_AUDIO
+      - microphone
+    - - 'android\.permission\.ACCESS_(?:COARSE|FINE)_LOCATION'
+      - location
+    - - android\.permission\.NFC
+      - NFC
+    - - 'android\.hardware\.usb\.(?:host|action\.USB_DEVICE_ATTACHED)'
+      - USB
+    - - android\.permission\.BLUETOOTH
+      - bluetooth
+  else: no hardware resources
+  class: Security Functional Requirements
+- id: FDP_DEC_EXT.1.2
+  type: manifest
+  choice_type: all
+  description: Access to Platform Resources
+  selection: 'The application has access to {}.'
+  choice:
+    - - android\.permission\.READ_CONTACTS
+      - address book
+    - - 'android\.permission\.(?:READ|WRITE)_CALENDAR'
+      - calendar
+    - - android\.permission\.READ_CALL_LOG
+      - call lists
+    - - android\.permission\.READ_LOGS
+      - system logs
+  else: no sensitive information repositories
+  class: Security Functional Requirements

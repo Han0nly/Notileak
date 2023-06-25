@@ -1,0 +1,93 @@
+- id: api_get_system_service
+  message: Get System Service
+  type: Regex
+  pattern: getSystemService
+  input_case: exact
+  severity: info
+- id: api_start_activity
+  message: Starting Activity
+  type: RegexOr
+  pattern:
+    - startActivity\(
+    - startActivities\(
+    - startActivityForResult\(
+    - startActivityFromChild\(
+    - startActivityFromFragment\(
+    - startActivityIfNeeded\(
+  input_case: exact
+  severity: info
+- id: api_start_service
+  message: Starting Service
+  type: RegexOr
+  pattern:
+    - startService\(
+    - bindService\(
+  input_case: exact
+  severity: info
+- id: api_send_broadcast
+  message: Sending Broadcast
+  type: RegexOr
+  pattern:
+    - sendBroadcast\(
+    - sendOrderedBroadcast\(
+    - sendStickyBroadcast\(
+  input_case: exact
+  severity: info
+- id: api_ipc
+  message: Inter Process Communication
+  type: RegexOr
+  pattern:
+    - IRemoteService
+    - IRemoteService\.Stub
+    - IBinder
+    - Intent
+  input_case: exact
+  severity: info
+- id: api_content_provider
+  message: Content Provider
+  type: Regex
+  pattern: android\.content\.ContentProvider
+  input_case: exact
+  severity: info
+- id: api_notifications
+  message: Android Notifications
+  type: RegexAnd
+  pattern:
+    - app\.NotificationManager
+    - notify
+  input_case: exact
+  severity: info
+- id: api_get_certificate
+  message: Get Installed Applications
+  type: RegexAndOr
+  pattern:
+    - getPackageManager\(
+    - - checkSignatures\(
+      - getPackageInfo\(
+  input_case: exact
+  severity: info
+- id: api_check_permission
+  message: Check if a permission is granted
+  type: RegexOr
+  pattern:
+    - checkPermission\(
+    - checkCallingOrSelfPermission\(
+    - checkSelfPermission\(
+    - enforceCallingOrSelfPermission\(
+    - enforcePermission\(
+  input_case: exact
+  severity: info
+- id: api_dynamic_receiver
+  message: Check if an app registereda receiver dynamically
+  type: RegexOr
+  pattern:
+    - registerReceiver\(
+  input_case: exact
+  severity: info
+- id: api_dynamic_permission
+  message: Check if a permission is granted
+  type: RegexOr
+  pattern:
+    - addPermission\(
+  input_case: exact
+  severity: info

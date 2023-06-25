@@ -1,0 +1,69 @@
+- id: api_get_system_service
+  description: Get System Service
+  type: Regex
+  pattern: getSystemService
+  input_case: exact
+  severity: info
+- id: api_start_activity
+  description: Starting Activity
+  type: RegexOr
+  pattern:
+    - startActivity\(
+    - startActivities\(
+    - startActivityForResult\(
+    - startActivityFromChild\(
+    - startActivityFromFragment\(
+    - startActivityIfNeeded\(
+  input_case: exact
+  severity: info
+- id: api_start_service
+  description: Starting Service
+  type: RegexOr
+  pattern:
+    - startService\(
+    - bindService\(
+  input_case: exact
+  severity: info
+- id: api_send_broadcast
+  description: Sending Broadcast
+  type: RegexOr
+  pattern:
+    - sendBroadcast\(
+    - sendOrderedBroadcast\(
+    - sendStickyBroadcast\(
+  input_case: exact
+  severity: info
+- id: api_ipc
+  description: Inter Process Communication
+  type: RegexOr
+  pattern:
+    - IRemoteService
+    - IRemoteService\.Stub
+    - IBinder
+    - Intent
+  input_case: exact
+  severity: info
+- id: api_content_provider
+  description: Content Provider
+  type: Regex
+  pattern: android\.content\.ContentProvider
+  input_case: exact
+  severity: info
+- id: api_notifications
+  description: Android Notifications
+  type: RegexAnd
+  pattern:
+    - app\.NotificationManager
+    - notify
+  input_case: exact
+  severity: info
+- id: api_installed
+  description: Get Installed Applications
+  type: RegexAndOr
+  pattern:
+    - getPackageManager\(
+    - - queryIntentActivities\(
+      - getInstalledApplications\(
+      - getInstalledPackages\(
+  input_case: exact
+  severity: info
