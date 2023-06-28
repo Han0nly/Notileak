@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<library>
+    <!-- library name -->
+    <name>com.pushwoosh:pushwoosh-baidu</name>
+
+    <!-- Advertising, Analytics, Android, SocialMedia, Cloud, Utilities -->
+    <category>Notification</category>
+
+    <!-- optional: version string -->
+    <version>5.21.1</version>
+
+    <!-- optional: date (format: dd.MM.yyyy  example: 21.05.2017) -->
+    <releasedate>23.12.2019</releasedate>
+
+    <!-- optional: comment -->
+    <comment></comment>
+</library>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<library>
+    <!-- library name -->
+    <name>com.urbanairship.android:urbanairship-hms</name>
+
+    <!-- Advertising, Analytics, Android, SocialMedia, Cloud, Utilities -->
+    <category>Notification</category>
+
+    <!-- optional: version string -->
+    <version>13.3.3</version>
+
+    <!-- optional: date (format: dd.MM.yyyy  example: 21.05.2017) -->
+    <releasedate>25.08.2020</releasedate>
+
+    <!-- optional: comment -->
+    <comment></comment>
+</library>

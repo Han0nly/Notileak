@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<library>
+    <!-- library name -->
+    <name>com.pushwoosh:pushwoosh-gcm</name>
+
+    <!-- Advertising, Analytics, Android, SocialMedia, Cloud, Utilities -->
+    <category>Notification</category>
+
+    <!-- optional: version string -->
+    <version>5.1.0</version>
+
+    <!-- optional: date (format: dd.MM.yyyy  example: 21.05.2017) -->
+    <releasedate>20.09.2017</releasedate>
+
+    <!-- optional: comment -->
+    <comment></comment>
+</library>

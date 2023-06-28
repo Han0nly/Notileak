@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<library>
+    <!-- library name -->
+    <name>com.pushwoosh:pushwoosh-huawei</name>
+
+    <!-- Advertising, Analytics, Android, SocialMedia, Cloud, Utilities -->
+    <category>Notification</category>
+
+    <!-- optional: version string -->
+    <version>6.2.1</version>
+
+    <!-- optional: date (format: dd.MM.yyyy  example: 21.05.2017) -->
+    <releasedate>01.03.2021</releasedate>
+
+    <!-- optional: comment -->
+    <comment></comment>
+</library>

@@ -1,1 +1,0 @@
-Github Issues are ONLY for reporting bugs and feature requests. For support, questions, queries and discussions use our slack channel. [Join MobSF Slack Channel](https://mobsf.slack.com/join/shared_invite/enQtNzM2NTAyNzA1MjgxLTdjMzkzNDc3ZjdiMjkwZTZhMmFhNDlkZmMwZDhjNDNmYTAzYWE5NGZlMDIzYzliNTdiMDQ2MTRlYjU1MjkyNGM)
