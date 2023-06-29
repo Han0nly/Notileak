@@ -15,11 +15,13 @@ echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gp
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 # Scrape latest notification libraries from Maven and other repositories.
-python library-scraper.py notification-libraries.json
+python library-scraper.py config/notification-libraries.json
 ```
 
+[![LibScraper](https://asciinema.org/a/4dAn72v8vbKVl7AGflXVfxpFi.svg)](https://asciinema.org/a/4dAn72v8vbKVl7AGflXVfxpFi)
+
 # Run
-Before run the following command, you need to change the hardcoded paths in the `utilities.py`
+Before run the following command, you need to change the hardcoded paths in the `settings.py`
 ```bash
-python utilities.py
+python main.py
 ```
