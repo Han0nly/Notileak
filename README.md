@@ -25,3 +25,4 @@ Before run the following command, you need to change the hardcoded paths in the 
 ```bash
 python main.py
 ```
+[![asciicast](https://asciinema.org/a/lbHcAqko9IfbCzde2Eea3j5NJ.svg)](https://asciinema.org/a/lbHcAqko9IfbCzde2Eea3j5NJ)
