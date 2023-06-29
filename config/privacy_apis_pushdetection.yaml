@@ -1,0 +1,253 @@
+- id: api_gps
+  description: GPS Location
+  type: RegexAndOr
+  pattern:
+    - android\.location
+    - - getLastKnownLocation\(
+      - requestLocationUpdates\(
+      - getLatitude\(
+      - getLongitude\(
+  input_case: exact
+  severity: info
+- id: location_intent
+  description: Used official intent related function
+  type: RegexOr
+  pattern:
+    - Location.*?Receiver
+    - Location.*?Update
+  input_case: exact
+  severity: info
+- id: geofences
+  description: Used official geofences function
+  type: Regex
+  pattern: geofence
+  input_case: lower
+  severity: info
+- id: airship_setLocationUpdatesEnabled
+  description: Used setLocationUpdatesEnabled function
+  type: Regex
+  pattern: setLocationUpdatesEnabled\(
+  input_case: exact
+  severity: info
+- id: airship_setBackgroundLocationAllowed
+  description: Used setBackgroundLocationAllowed function
+  type: Regex
+  pattern: setBackgroundLocationAllowed\(
+  input_case: exact
+  severity: info
+- id: airship_setLocationRequestOptions
+  description: Used setLocationRequestOptions function
+  type: Regex
+  pattern: setLocationRequestOptions\(
+  input_case: exact
+  severity: info
+- id: airship_addLocationListener
+  description: Used addLocationListener function
+  type: Regex
+  pattern: addLocationListener\(
+  input_case: exact
+  severity: info
+- id: airship_removeLocationListener
+  description: Used removeLocationListener function
+  type: Regex
+  pattern: removeLocationListener\(
+  input_case: exact
+  severity: info
+- id: airship_createRequest
+  description: Used createRequest function
+  type: Regex
+  pattern: ActionRunRequest\.createRequest\(
+  input_case: exact
+  severity: info
+- id: airship_setDataCollectionEnabled
+  description: Used setDataCollectionEnabled function
+  type: Regex
+  pattern: setDataCollectionEnabled\(
+  input_case: exact
+  severity: info
+- id: airship_registerAction
+  description: Used registerAction function
+  type: Regex
+  pattern: registerAction\(
+  input_case: exact
+  severity: info
+- id: Kumulos_TrackEventImmediately
+  description: Used TrackEventImmediately function
+  type: Regex
+  pattern: TrackEventImmediately\(
+  input_case: exact
+  severity: info
+- id: Kumulos_SendLocationUpdate
+  description: Used SendLocationUpdate function
+  type: Regex
+  pattern: SendLocationUpdate\(
+  input_case: exact
+  severity: info
+- id: Kumulos_TrackEvent
+  description: Used TrackEvent function
+  type: Regex
+  pattern: TrackEvent\(
+  input_case: exact
+  severity: info
+- id: Kumulos_AssociateUserWithInstall
+  description: Used AssociateUserWithInstall function
+  type: Regex
+  pattern: AssociateUserWithInstall\(
+  input_case: exact
+  severity: info
+- id: Leanplum_setDeviceLocation
+  description: Used setDeviceLocation function
+  type: Regex
+  pattern: setDeviceLocation\(
+  input_case: exact
+  severity: info
+- id: Leanplum_disableLocationCollection
+  description: Used disableLocationCollection function
+  type: Regex
+  pattern: disableLocationCollection\(
+  input_case: exact
+  severity: info
+- id: Leanplum_setDeviceLocationWithLatitude
+  description: Used setDeviceLocationWithLatitude function
+  type: Regex
+  pattern: Leanplum\.setDeviceLocationWithLatitude\(
+  input_case: exact
+  severity: info
+- id: Leanplum_trackGooglePlayPurchase
+  description: Used trackGooglePlayPurchase function
+  type: Regex
+  pattern: Leanplum\.trackGooglePlayPurchase\(
+  input_case: exact
+  severity: info
+- id: Leanplum_track
+  description: Used track function
+  type: Regex
+  pattern: Leanplum\.track\(
+  input_case: exact
+  severity: info
+- id: Onesignal_getDeviceState
+  description: Used getDeviceState function
+  type: Regex
+  pattern: OneSignal\.getDeviceState\(
+  input_case: exact
+  severity: info
+- id: Onesignal_setLocationShared
+  description: Used setLocationShared function
+  type: Regex
+  pattern: OneSignal\.setLocationShared\(
+  input_case: exact
+  severity: info
+- id: Onesignal_isLocationShared
+  description: Used isLocationShared function
+  type: Regex
+  pattern: OneSignal\.isLocationShared\(
+  input_case: exact
+  severity: info
+- id: Onesignal_promptLocation
+  description: Used promptLocation function
+  type: Regex
+  pattern: OneSignal\.promptLocation\(
+  input_case: exact
+  severity: info
+- id: Onesignal_provideUserConsent
+  description: Used provideUserConsent function
+  type: Regex
+  pattern: OneSignal\.provideUserConsent\(
+  input_case: exact
+  severity: info
+- id: Onesignal_setRequiresUserPrivacyConsent
+  description: Used setRequiresUserPrivacyConsent function
+  type: Regex
+  pattern: OneSignal\.setRequiresUserPrivacyConsent\(
+  input_case: exact
+  severity: info
+- id: Pushwoosh_startLocationTracking
+  description: Used startLocationTracking function
+  type: Regex
+  pattern: PushwooshLocation\.startLocationTracking\(
+  input_case: exact
+  severity: info
+- id: Pushwoosh_requestBackgroundLocationPermission
+  description: Used requestBackgroundLocationPermission function
+  type: Regex
+  pattern: PushwooshLocation\.requestBackgroundLocationPermission\(
+  input_case: exact
+  severity: info
+- id: Pushwoosh_GDPRManager
+  description: Used showGDPRConsentUI function
+  type: Regex
+  pattern: showGDPRConsentUI\(
+  input_case: exact
+  severity: info
+- id: Taplytics_startOptions
+  description: Used startOptions function
+  type: Regex
+  pattern: startOptions\.put\(\"disable\"
+  input_case: exact
+  severity: info
+- id: Mobpush_submitPolicyGrantResult
+  description: Used submitPolicyGrantResult function
+  type: Regex
+  pattern: MobSDK\.submitPolicyGrantResult\(
+  input_case: exact
+  severity: info
+- id: Getui_setSessionTimoutMillis
+  description: Used setSessionTimoutMillis function
+  type: Regex
+  pattern: setSessionTimoutMillis\(
+  input_case: exact
+  severity: info
+- id: Getui_onEvent
+  description: Used onEvent function
+  type: Regex
+  pattern: GsManager\.getInstance\(\)\.onEvent\(
+  input_case: exact
+  severity: info
+- id: Jpush_setGeofenceInterval
+  description: Used setGeofenceInterval function
+  type: Regex
+  pattern: setGeofenceInterval\(
+  input_case: exact
+  severity: info
+- id: Jpush_setMaxGeofenceNumber
+  description: Used setMaxGeofenceNumber function
+  type: Regex
+  pattern: setMaxGeofenceNumber\(
+  input_case: exact
+  severity: info
+- id: Jpush_reportNotificationOpened
+  description: Used reportNotificationOpened function
+  type: Regex
+  pattern: reportNotificationOpened\(
+  input_case: exact
+  severity: info
+- id: Jpush_cEvent_addKeyValue
+  description: Used cEvent_addKeyValue function
+  type: Regex
+  pattern: cEvent\.addKeyValue\(
+  input_case: exact
+  severity: info
+- id: Jpush_lEvent_addKeyValue
+  description: Used lEvent_addKeyValue function
+  type: Regex
+  pattern: lEvent\.addKeyValue\(
+  input_case: exact
+  severity: info
+- id: Jpush_onEvent
+  description: Used onEvent function
+  type: Regex
+  pattern: JAnalyticsInterface\.onEvent\(
+  input_case: exact
+  severity: info
+- id: Jpush_CalculateEvent
+  description: Used CalculateEvent function
+  type: Regex
+  pattern: CalculateEvent\(
+  input_case: exact
+  severity: info
+- id: Umeng_preInit
+  description: Used Umeng_preInit function
+  type: Regex
+  pattern: PushHelper\.preInit\(
+  input_case: exact
+  severity: info

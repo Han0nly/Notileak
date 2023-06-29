@@ -1,49 +1,18 @@
-# 1. iterate over the lib folder
-# 2. if find a *.aar file, unzip this file to a folder.
-# 3. get the class.jar file in the generated folder.
-# 4. use the dx script to convert the class.jar file to dex file.
-# 5. use LibPecker.jar to
 import json
 import os
 import zipfile
 import subprocess
 import shutil
 import platform
-
 import pymongo
 from pymongo import MongoClient
-
-aar_dir = './bin/notification-lib/aar/'
-# store the temp file extracted from aar file.
-temp_dir = './bin/notification-lib/temp/'
-# store the class.jar file from the temp_dir
-jar_dir = './bin/notification-lib/jar/jar_extracted/'
-# jar_dir = 'notification-lib/jar/error/'
-# store the jar files that cannot be successfully converted into dex file.
-convert_success_jar_dir = './bin/notification-lib/jar/success/'
-# store the jar files that are successfully converted into dex file.
-convert_error_jar_dir = './bin/notification-lib/jar/error/'
-# convert_error_jar_dir = 'notification-lib/jar/jar_extracted/'
-dex_dir = './bin/notification-lib/dex/'
-# dex_dir = './bin/notification-lib/test/'
-apk_dir = '/Volumes/TOSHIBA/apks/Google/'
-# apk_dir = './bin/apks/'
-# Flowdroid Result dir
-flow_result = './bin/flow_result/'
-source_sink_file = ''
-android_home = ''
-
+from settings import *
 
 def execute_cmd(cmd):
     """ status: 0: success, 1: error
        ret: success: stdout, error: stderr
     """
     status, ret = subprocess.getstatusoutput(cmd)
-    # if status == 0:
-    #     print('[SUCCESS] %s' % cmd)
-    # else:
-    #     print('[ERROR] %s' % cmd)
-    #     print(ret)
     return status, ret
 
 
@@ -69,7 +38,7 @@ def aar2jar(aardir):
     return jar_list
 
 
-def jar2dex(jardir):
+def jar2dex(jardir, sys_type):
     error_list, succ_list = [], []
     for i in findAllFile(jardir, 'jar'):
         dex_file = dex_dir + i.split('/')[-1][:-3] + 'dex'
@@ -96,51 +65,31 @@ def jar2dex(jardir):
         shutil.move(k, convert_error_jar_dir + k.split('/')[-1][:-3] + 'jar')
 
 
-def runLibPecker(apkdir, dexdir):
-    # iterate all the apks
-    for apk in findAllFile(apkdir, 'apk'):
-        result = {}
-        result['app_mame'] = apk.split('/')[-1]
-        print(result['app_mame'])
-        if col.find_one(result):
-            continue
-        else:
-            result['result'] = {}
-            # compute the similarity of this apk with every library.
-            for dex in findAllFile(dexdir, 'dex'):
-                libPecker_command = 'java -jar LibPecker.jar ' + apk + ' ' + dex
-                if sys_type == "Windows":
-                    libPecker_command.replace('/', '\\')
-                (exec_stat, exec_output) = execute_cmd(libPecker_command)
-                if exec_stat == 0:
-                    print('[SUCCESS] %s' % libPecker_command)
-                    if len(exec_output) > 50:
-                        break
-                    else:
-                        similarity = float(exec_output.split('\n')[0].split(":")[1].strip())
-                        print(similarity)
-                        result['result'][dex.split('/')[-1][:-4]] = similarity
-                    # libs_simi_list.append(lib_simi_dict)
-                else:
-                    print('[ERROR] %s' % libPecker_command)
-            col.insert(result, check_keys=False)
+def runLibPecker(apk, dex, sys_type):
+    libPecker_command = 'java -jar ' + libpecker_dir + ' ' + apk + ' ' + dex
+    if sys_type == "Windows":
+        libPecker_command.replace('/', '\\')
+    (exec_stat, exec_output) = execute_cmd(libPecker_command)
+    if exec_stat == 0:
+        print('[SUCCESS] %s' % libPecker_command)
+        if len(exec_output) <=50:
+            similarity = float(exec_output.split('\n')[0].split(":")[1].strip())
+            print(similarity)
+            return similarity
+    else:
+        print('[ERROR] %s' % libPecker_command)
+        return -1
 
 
-def runFlowDroid(apkdir: str, resultdir: str) -> None:
-    # iterate all the apks
-    for apk in findAllFile(apkdir, 'apk'):
-        result = {}
-        result['app_mame'] = apk.split('/')[-1]
-        print(result['app_mame'])
+def runFlowDroid(apk: str, sys_type: str) -> None:
         if sys_type == "Windows":
-            result_xml = resultdir + apk.split('\\')[-1] + ".xml"
+            result_xml = flow_result_dir + apk.split('\\')[-1] + ".xml"
         else:
-            result_xml = resultdir + apk.split('/')[-1] + ".xml"
+            result_xml = flow_result_dir + apk.split('/')[-1] + ".xml"
         if os.path.isfile(result_xml):
             print("[Already Exist]: %s" % result_xml)
-            continue
         else:
-            flowDroid_command = 'java -jar soot-infoflow-cmd-jar-with-dependencies.jar -a ' + apk + \
+            flowDroid_command = 'java -jar ' + flowdroid_dir + ' -a ' + apk + \
                                 " -p " + android_home + " -s " + source_sink_file + \
                                 " -d -on -ol -cp -ps -r -ct 600 -dt 600 -rt 600 -o " + result_xml
             (exec_stat, exec_output) = execute_cmd(flowDroid_command)
@@ -155,18 +104,36 @@ def runFlowDroid(apkdir: str, resultdir: str) -> None:
 def mongodb_init(index_exist: bool):
     client = MongoClient()
     db = client['Notileaks']
-    collection = db['LibPecker']
+    collection = db['Test']
     if index_exist:
         result = collection.create_index('app_mame', unique=True)
     return collection
 
+def lib2dex(covert_bool: bool, sys_type: str):
+    if covert_bool:
+        aar2jar(aar_dir)
+        jar2dex(jar_dir,sys_type)
 
-if __name__ == '__main__':
-    sys_type = platform.system()
-    # dex_list = []
-    # aar2jar(aar_dir)
-    # jar2dex(jar_dir)
-    # 检测当前是windows还是linux
-    col = mongodb_init(index_exist=False)
-    runLibPecker(apk_dir, dex_dir)
-    # runFlowDroid(apk_dir, flow_result)
+
+def run_analysis(apkdir,dexdir,db_column,sys):
+    has_noti_libs = False
+    # iterate all the apks
+    for apk in findAllFile(apkdir, 'apk'):
+        result = {}
+        result['app_mame'] = apk.split('/')[-1]
+        print(result['app_mame'])
+        if db_column.find_one(result):
+            continue
+        else:
+            result['LibPecker'] = {}
+            # compute the similarity of this apk with every library.
+            for dex in findAllFile(dexdir, 'dex'):
+                sim = runLibPecker(apk,dex,sys)
+                if sim != -1:
+                    lib_name = dex.split('/')[-1][:-4].replace(".", "_")
+                    result['LibPecker'][lib_name] = sim
+                    if sim > simi_threshold:
+                        has_noti_libs = True
+            if has_noti_libs:
+                runFlowDroid(apk,sys)
+            db_column.insert_one(result)

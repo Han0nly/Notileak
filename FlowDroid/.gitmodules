@@ -1,4 +1,0 @@
-[submodule "DroidBench"]
-	path = DroidBench
-	url = https://github.com/secure-software-engineering/DroidBench.git
-	branch = develop

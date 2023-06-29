@@ -1,0 +1,264 @@
+{
+  "libraries": [
+    {
+      "artefactid": "gtc",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.getui",
+      "name": "com.getui:gtc",
+      "repo": "https://mvn.getui.com/nexus/content/repositories/releases/"
+    },{
+      "artefactid": "gtsdk",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.getui",
+      "name": "com.getui:gtsdk",
+      "repo": "https://mvn.getui.com/nexus/content/repositories/releases/"
+    },{
+      "artefactid": "hwp",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.getui.opt",
+      "name": "com.getui.opt:hwp",
+      "repo": "https://mvn.getui.com/nexus/content/repositories/releases/"
+    },{
+      "artefactid": "xmp",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.getui.opt",
+      "name": "com.getui.opt:xmp",
+      "repo": "https://mvn.getui.com/nexus/content/repositories/releases/"
+    },{
+      "artefactid": "mzp",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.getui.opt",
+      "name": "com.getui.opt:mzp",
+      "repo": "https://mvn.getui.com/nexus/content/repositories/releases/"
+    },{
+      "artefactid": "ups",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.getui.opt",
+      "name": "com.getui.opt:ups",
+      "repo": "https://mvn.getui.com/nexus/content/repositories/releases/"
+    },{
+      "artefactid": "oppo",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.assist-v3",
+      "name": "com.assist-v3:oppo",
+      "repo": "https://mvn.getui.com/nexus/content/repositories/releases/"
+    },{
+      "artefactid": "vivo",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.assist-v3",
+      "name": "com.assist-v3:vivo",
+      "repo": "https://mvn.getui.com/nexus/content/repositories/releases/"
+    },{
+      "artefactid": "jcore",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "cn.jiguang.sdk",
+      "name": "cn.jiguang.sdk:jcore",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "jpush",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "cn.jiguang.sdk",
+      "name": "cn.jiguang.sdk:jpush",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "pushbots-lib",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.pushbots",
+      "name": "com.pushbots:pushbots-lib",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "core",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.ibm.mobilefirstplatform.clientsdk.android",
+      "name": "com.ibm.mobilefirstplatform.clientsdk.android:core",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "push",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.ibm.mobilefirstplatform.clientsdk.android",
+      "name": "com.ibm.mobilefirstplatform.clientsdk.android:push",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "pushwoosh",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.pushwoosh",
+      "name": "com.pushwoosh:pushwoosh",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "pushwoosh-firebase",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.pushwoosh",
+      "name": "com.pushwoosh:pushwoosh-firebase",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "pushwoosh-amazon",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.pushwoosh",
+      "name": "com.pushwoosh:pushwoosh-amazon",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "pushwoosh-huawei",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.pushwoosh",
+      "name": "com.pushwoosh:pushwoosh-huawei",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "pushwoosh-baidu",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.pushwoosh",
+      "name": "com.pushwoosh:pushwoosh-baidu",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "pushwoosh-gcm",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.pushwoosh",
+      "name": "com.pushwoosh:pushwoosh-gcm",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "leanplum-core",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.leanplum",
+      "name": "com.leanplum:leanplum-core",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "leanplum-push",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.leanplum",
+      "name": "com.leanplum:leanplum-push",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "leanplum-fcm",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.leanplum",
+      "name": "com.leanplum:leanplum-fcm",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "leanplum-location",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.leanplum",
+      "name": "com.leanplum:leanplum-location",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "leanplum-gcm",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.leanplum",
+      "name": "com.leanplum:leanplum-gcm",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "leanplum-mipush",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.leanplum",
+      "name": "com.leanplum:leanplum-mipush",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "LeanplumIntegration",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.leanplum.segment",
+      "name": "com.leanplum.segment:LeanplumIntegration",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "taplytics",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.taplytics.sdk",
+      "name": "com.taplytics.sdk:taplytics",
+      "repo": "https://github.com/taplytics/Taplytics-Android-SDK/raw/master/AndroidStudio/"
+    },{
+      "artefactid": "analytics-integration-taplytics",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.segment.analytics.android",
+      "name": "com.segment.analytics.android:analytics-integration-taplytics",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "taplytics",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.segment.analytics.android",
+      "name": "com.segment.analytics.android:taplytics",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "onesignal-gradle-plugin",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "gradle.plugin.com.onesignal",
+      "name": "gradle.plugin.com.onesignal:onesignal-gradle-plugin",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "OneSignal",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.onesignal",
+      "name": "com.onesignal:OneSignal",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "push-notifications-android",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.pusher",
+      "name": "com.pusher:push-notifications-android",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "urbanairship-fcm",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.urbanairship.android",
+      "name": "com.urbanairship.android:urbanairship-fcm",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "urbanairship-adm",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.urbanairship.android",
+      "name": "com.urbanairship.android:urbanairship-adm",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "urbanairship-hms",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.urbanairship.android",
+      "name": "com.urbanairship.android:urbanairship-hms",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "kumulos-android-debug",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.kumulos.android",
+      "name": "com.kumulos.android:kumulos-android-debug",
+      "repo": "mvn-central"
+    },{
+      "artefactid": "kumulos-android-release",
+      "category": "Notification",
+      "comment": "",
+      "groupid": "com.kumulos.android",
+      "name": "com.kumulos.android:kumulos-android-release",
+      "repo": "mvn-central"
+    }
+  ]
+}
