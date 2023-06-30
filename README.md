@@ -1,4 +1,4 @@
-# Intoduction
+# Introduction
 Notileak is implemented based on LibPecker and Flowdroid. LibPecker is used to detect third party notification libraries and Flowdroid is used to detect whether these libraries leak personal information. The analysis results are stored in mongodb.
 
 This project mainly constains three useful scripts, including `library-scraper.py`, `main.py` and `FD_Analysis.py`. 
