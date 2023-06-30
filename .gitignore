@@ -1,3 +1,5 @@
 my-lib-repo/
 .idea
+apks/
+test_libs/
 __pycache__
